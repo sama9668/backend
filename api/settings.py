@@ -12,12 +12,14 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-e)8)so2j7e^jn!!%6-j0$$)g-l%=qgs6_#2=70wvwef4au0ty1'
@@ -139,3 +141,4 @@ CORS_ALLOW_METHODS = (
 
 MEDIA_URL = '/media/'  # The base URL for serving media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')  # Points to your uploads directory
+django_heroku.settings(locals())
